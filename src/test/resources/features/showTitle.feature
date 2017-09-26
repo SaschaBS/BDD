@@ -11,3 +11,6 @@ Funktionalität: Der Anwender bekommt einen Titel angezeigt
     Und trage im Feld "content" "Hallo" ein
     Und druecke Abschicken
     Dann wird die Ergebnisseite angezeigt
+    Und im ID Feld steht "1"
+    Und im Inhaltsfeld steht "Hallo"
+    Und man kann zurueck zur Eingabe gehen

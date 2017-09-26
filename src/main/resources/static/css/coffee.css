@@ -1,0 +1,100 @@
+#coffeemachine {
+    position: relative;
+    height: 600px;
+    width: 800px;
+    background-color: lightGrey;
+}
+
+#display {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 150px;
+    width: 500px;
+    background-color: black;
+    border-radius: 15px;
+}
+
+#message {
+    color: white;
+    font-size: 24px;
+    font-family: "Brush Script MT", sans-serif;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 150px;
+}
+
+#tray {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    height: 300px;
+    width: 500px;
+    background-color: grey;
+}
+
+#power {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    background-image: url(/images/power64x64.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+
+#brew {
+    position: absolute;
+    top: 160px;
+    right: 20px;
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+
+#clean {
+    position: absolute;
+    top: 300px;
+    right: 20px;
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+
+#pot {
+    position: absolute;
+    bottom: 20px;
+    left: 190px;
+    border-top: 150px solid white;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    height: 0;
+    width: 100px;
+}
+
+#potFilled {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 199px;
+    border-top: 80px solid sienna;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    height: 0;
+    width: 100px;
+}
+

@@ -19,24 +19,26 @@ repositories {
 }
 
 springBoot {
-    mainClass = 'de.lineas.bddemo.Application'
+    mainClass = 'de.lineas.bddemo.Application' // tell Spring Boot where the main class is. Otherwise not booting.
 }
 
 dependencies {
 
-    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
-    compile("org.springframework.boot:spring-boot-starter-data-rest")
-    compile("org.springframework.boot:spring-boot-starter-data-jpa")
-    runtime("org.hsqldb:hsqldb")
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf' // server-side model-view framework
+    compile("org.springframework.boot:spring-boot-starter-data-rest") // use Rest Resources
+    compile("org.springframework.boot:spring-boot-starter-data-jpa") // Database stuff
+    compile("org.webjars:jquery:2.0.3-1") // jquery einfach einbinden! Yeah!
 
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+    runtime("org.hsqldb:hsqldb") // embedded database
 
-    testCompile('info.cukes:cucumber-java:1.2.4')
-    testCompile('info.cukes:cucumber-junit:1.2.4')
-    testCompile('info.cukes:cucumber-spring:1.2.4')
-    testCompile 'com.codeborne:selenide:4.6'
+    testCompile('org.springframework.boot:spring-boot-starter-test') // makes @SpringBootTest possible
+
+    testCompile('info.cukes:cucumber-java:1.2.4') // cucumber language for java
+    testCompile('info.cukes:cucumber-junit:1.2.4') // RunWith(Cucumber.class) possible
+    testCompile('info.cukes:cucumber-spring:1.2.4') // Spring automatically looks for features and StepDefs
+    testCompile 'com.codeborne:selenide:4.6' // test Framework for UA tests
 }
 
 test {
-    systemProperties['selenide.browser'] = 'chrome'
+    systemProperties['selenide.browser'] = 'chrome' // set chrome as the default browser in tests, because firefox refused to work. :-(
 }
