@@ -20,11 +20,53 @@
 </div>
 
 <script>
-    $(".power").click(function () {
-        $(this).toggleClass("on");
-    });
-</script>
 
+    var coffees = 0;
+    var serviceInterval = 50;
+
+    $(".power").click(function () {
+        var message;
+        if ($(this).hasClass("on")) {
+            message = "Push Power to start coffee machine!";
+        } else {
+            message = "Welcome!";
+        }
+        $(this).toggleClass("on");
+        setMessage(message);
+    });
+
+    $(".brew").click(function () {
+        $(this).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+        $(".potFilled").show();
+        coffees++;
+        if (coffees === serviceInterval) {
+            requireCleaning();
+        }
+    });
+
+    $(".clean").click(function () {
+        $(this).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+    });
+
+    $(".tray").click(function () {
+        var filledCoffee = $(".potFilled");
+        if (filledCoffee.is(':visible')) {
+            filledCoffee.hide();
+            $(".pot").hide();
+        } else {
+            $(".pot").toggle();
+        }
+    });
+
+    var setMessage = function (message) {
+        $(".message").find("span").text(message);
+    };
+
+    var requireCleaning = function () {
+        setMessage("Please clean the Coffee machine!");
+    }
+
+</script>
 
 </body>
 </html>

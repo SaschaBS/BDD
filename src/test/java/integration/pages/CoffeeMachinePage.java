@@ -23,6 +23,10 @@ public class CoffeeMachinePage {
         return power.has(Condition.cssClass("on"));
     }
 
+    public void turnOn() {
+        power.click();
+    }
+
     public void open() {
         Selenide.open(URL);
     }

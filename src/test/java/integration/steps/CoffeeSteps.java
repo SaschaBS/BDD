@@ -20,7 +20,7 @@ public class CoffeeSteps {
     private CoffeeMachinePage page;
 
     @Before
-    public void nice() {
+    public void setup() {
         System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
 //        page = new CoffeeMachinePage();
     }
@@ -43,4 +43,5 @@ public class CoffeeSteps {
         $(By.className("message")).is(text(arg0));
 //        assertEquals(arg0, page.getMessage());
     }
+
 }
