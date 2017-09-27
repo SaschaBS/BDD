@@ -11,8 +11,7 @@ Funktionalität: Die Kaffemaschine hat drei einfache Funktionen.
   dass sie eingeschaltet werden muss.
     Angenommen Ich betrachte die Kaffeemaschine
     Und die Kaffemaschine wurde noch nicht eingeschaltet
-    Dann leuchtet der Einschaltknopf rot
-    Und das Display zeigt die Nachricht "Push Power to start coffee machine!"
+    Dann zeigt das Display zeigt die Nachricht "Push Power to start coffee machine!"
 
   Szenario: Wenn die Maschine eingeschaltet wurde, leuchtet die Powertaste grün und die Maschine begrüßt den Anwender
     Angenommen Ich betrachte die Kaffeemaschine
