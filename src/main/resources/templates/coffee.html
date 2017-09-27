@@ -8,23 +8,20 @@
 </head>
 <body>
 <div id="coffeemachine">
-    <div id="display">
-        <div id="message">Push Power to start coffee machine!</div>
+    <div class="message">
+        <span>Push Power to start coffee machine!</span>
     </div>
-    <div id="tray"></div>
-    <div id="pot"></div>
-    <div id="potFilled"></div>
-    <div id="power"></div>
-    <div id="brew"></div>
-    <div id="clean"></div>
+    <div class="tray"></div>
+    <div class="pot"></div>
+    <div class="potFilled"></div>
+    <div class="power"></div>
+    <div class="brew"></div>
+    <div class="clean"></div>
 </div>
 
 <script>
-    $("#power").click(function () {
-        if ($(this).css("background-color") === "rgb(0, 128, 0)") {
-            $(this).css("background-color", "red");
-        } else
-            $(this).css("background-color", "green");
+    $(".power").click(function () {
+        $(this).toggleClass("on");
     });
 </script>
 
