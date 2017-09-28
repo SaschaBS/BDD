@@ -37,14 +37,15 @@
 
     $(".power").click(function () {
         $(this).toggleClass("on");
-        setMessage();
+        var isOn = $(".power").hasClass("on");
+        setMessage(isOn ? 'Welcome' : 'Standby');
     });
 
     $(".brew").click(function () {
         $(this).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
         $(".potFilled").show();
         coffees++;
-        if (coffees === serviceInterval) {
+        if (coffees == serviceInterval) {
             requireCleaning();
         }
     });
@@ -65,7 +66,8 @@
 
     $("#languages").change(function (val) {
         lang = val.target.value;
-        setMessage(getLocalizedMessage('Standby', lang));
+        var isOn = $(".power").hasClass("on");
+        setMessage(isOn ? 'Welcome' : 'Standby');
     });
 
     $("#serviceInterval").change(function (val) {
@@ -73,21 +75,39 @@
     });
 
     var getLocalizedMessage = function (type, lang) {
-        if (lang === 'de') return type === 'Welcome' ? 'Willkommen' : 'Bitte den Einschaltknopf drücken!';
-        if (lang === 'en') return type === 'Welcome' ? 'Welcome!' : 'Push Power to start coffee machine!';
+        if (lang === 'de') {
+            switch (type) {
+                case 'Welcome' :
+                    return 'Willkommen';
+                case 'Standby':
+                    return 'Bitte den Einschaltknopf drücken!';
+            }
+        }
+        if (lang === 'en') {
+            switch (type) {
+                case 'Welcome' :
+                    return 'Welcome!';
+                case 'Standby':
+                    return 'Push Power to start coffee machine!';
+                case 'Clean':
+                    return 'Please clean the machine';
+            }
+        }
     };
 
-    var setMessage = function () {
-        var isOn = $(".power").hasClass("on");
-        $(".message").find("span").text(getLocalizedMessage(isOn ? 'Welcome' : 'Standby', lang));
+    var setMessage = function (type) {
+        $(".message").find("span").text(getLocalizedMessage(type, lang));
     };
 
     var requireCleaning = function () {
-
+        setMessage('Clean');
+        setTimeout(function () {
+            setMessage('Welcome');
+        }, 10000);
     };
 
     $(document).ready(function () {
-        setMessage();
+        setMessage('Standby');
     });
 
 </script>
