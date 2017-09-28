@@ -15,6 +15,8 @@ public class CoffeeMachinePage {
 
     private final SelenideElement display = $(By.className("message"));
 
+    private final SelenideElement language = $(By.name("language"));
+
     public String getMessage() {
         return display.getText();
     }
@@ -31,5 +33,11 @@ public class CoffeeMachinePage {
         Selenide.open(URL);
     }
 
+    public String getLanguage() {
+        return language.getSelectedValue();
+    }
 
+    public void setLanguage(String language) {
+        this.language.selectOptionByValue(language);
+    }
 }

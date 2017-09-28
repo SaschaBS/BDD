@@ -9,7 +9,7 @@
 <body>
 <div id="coffeemachine">
     <div class="message">
-        <span>Push Power to start coffee machine!</span>
+        <span></span>
     </div>
     <div class="tray"></div>
     <div class="pot"></div>
@@ -17,22 +17,27 @@
     <div class="power"></div>
     <div class="brew"></div>
     <div class="clean"></div>
+
+</div>
+<div class="admin">
+    <label for="languages">Sprach:</label>
+    <select id="languages" name="language">
+        <option value="de">Deutsch</option>
+        <option value="en" selected="selected">English</option>
+    </select>
+    <label for="serviceInterval">Service Interval:</label>
+    <input id="serviceInterval" value="50"/>
 </div>
 
 <script>
 
     var coffees = 0;
     var serviceInterval = 50;
+    var lang = 'en';
 
     $(".power").click(function () {
-        var message;
-        if ($(this).hasClass("on")) {
-            message = "Push Power to start coffee machine!";
-        } else {
-            message = "Welcome!";
-        }
         $(this).toggleClass("on");
-        setMessage(message);
+        setMessage();
     });
 
     $(".brew").click(function () {
@@ -58,13 +63,32 @@
         }
     });
 
-    var setMessage = function (message) {
-        $(".message").find("span").text(message);
+    $("#languages").change(function (val) {
+        lang = val.target.value;
+        setMessage(getLocalizedMessage('Standby', lang));
+    });
+
+    $("#serviceInterval").change(function (val) {
+        serviceInterval = val.target.value;
+    });
+
+    var getLocalizedMessage = function (type, lang) {
+        if (lang === 'de') return type === 'Welcome' ? 'Willkommen' : 'Bitte den Einschaltknopf drücken!';
+        if (lang === 'en') return type === 'Welcome' ? 'Welcome!' : 'Push Power to start coffee machine!';
+    };
+
+    var setMessage = function () {
+        var isOn = $(".power").hasClass("on");
+        $(".message").find("span").text(getLocalizedMessage(isOn ? 'Welcome' : 'Standby', lang));
     };
 
     var requireCleaning = function () {
-        setMessage("Please clean the Coffee machine!");
-    }
+
+    };
+
+    $(document).ready(function () {
+        setMessage();
+    });
 
 </script>
 
