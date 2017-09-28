@@ -3,14 +3,7 @@
 
 #noinspection NonAsciiCharacters
 Funktionalität:
-  Die Kaffemaschine hat drei einfache Funktionen.
-  Sie kann eingeschaltet werden.
-  Sie kann Kaffee servieren.
-  Sie zeigt nach einer bestimmten Menge entnommenen Kaffees an, dass sie gereinigt werden muss.
-  Sie reinigt sich auf Knopfdruck automatisch.
-
-  Die Maschine soll einfach bedienbar sein und alle notwendigen Arbeitsschritte auf dem Display erklären,
-  so dass keine zusätzliche gedruckte Anleitung nötig ist.
+  Als Benutzer der Kaffeemaschine möchte ich die Maschine einschalten könnten, damit ich mir einen Kaffee zubereiten kann.
 
   Szenariogrundriss: : Wenn die Maschine noch nicht eingeschaltet wurde, leuchtet die Powertaste rot und ein Hinweistext, weist darauf hin,
   dass sie eingeschaltet werden muss.
