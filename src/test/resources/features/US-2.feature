@@ -11,6 +11,7 @@ Funktionalität: Die Kaffeemaschine muss verhindern, dass ein Kaffee zubereitet 
 
   Szenario: Die Nachricht, dass eine Tasse untergestellt werden soll, muss verschwinden, wenn 10 sek. nichts betätigt wird
     Angenommen Die Kaffeemaschine ist eingeschaltet
-    Und das Serviceintervall wurde erreicht
-    Und die Servicenachricht wird angezeigt
-    Dann wird nach 10 Sekunden die Servicenachricht ausgeblendet
+    Und es ist kein Becher untergestellt
+    Und ich drücke den Knopf für Kaffee
+    Und im Display wird angezeigt, dass der Benutzer eine Tasse unterstellen muss
+    Dann wird nach 11 Sekunden die Nachricht ausgeblendet

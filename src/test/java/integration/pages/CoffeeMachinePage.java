@@ -15,6 +15,12 @@ public class CoffeeMachinePage {
 
     private final SelenideElement display = $(By.className("message"));
 
+    private final SelenideElement pot = $(By.className("pot"));
+
+    private final SelenideElement coffee = $(By.className("potFilled"));
+
+    private final SelenideElement clean = $(By.className("clean"));
+
     private final SelenideElement language = $(By.name("language"));
 
     private final SelenideElement serviceInterval = $("#serviceInterval");
@@ -56,9 +62,26 @@ public class CoffeeMachinePage {
     }
 
     public void insertPot() {
-        tray.click();
+        if (!pot.isDisplayed()) {
+            tray.click();
+        }
     }
 
+    public boolean hasPot() {
+        return pot.isDisplayed();
+    }
 
+    public boolean hasCoffee() {
+        return coffee.isDisplayed();
+    }
 
+    public void takeCoffee() {
+        if (pot.isDisplayed()) {
+            tray.click(10, 10);
+        }
+    }
+
+    public void clean() {
+        clean.click();
+    }
 }

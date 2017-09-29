@@ -83,9 +83,64 @@ public class CoffeeSteps {
         assertEquals("Please clean the machine", page.getMessage());
     }
 
-    @Dann("^wird nach (\\d+) Sekunden die Servicenachricht ausgeblendet$")
-    public void wirdNachSekundenDieServicenachrichtAusgeblendet(int arg0) throws Throwable {
+
+    @Und("^es ist kein Becher untergestellt$")
+    public void esIstKeinBecherUntergestellt() throws Throwable {
+        assertFalse(page.hasPot());
+    }
+
+    @Und("^ich drücke den Knopf für Kaffee$")
+    public void ichDrueckeDenKnopfFuerKaffee() throws Throwable {
+        page.brew();
+    }
+
+    @Dann("^wird kein Kaffee ausgegeben$")
+    public void wirdKeinKaffeeAusgegeben() throws Throwable {
+        assertFalse(page.hasCoffee());
+    }
+
+    @Und("^im Display wird angezeigt, dass der Benutzer eine Tasse unterstellen muss$")
+    public void imDisplayWirdAngezeigtDassDerBenutzerEineTasseUnterstellenMuss() throws Throwable {
+        assertEquals("Please insert coffee pot!", page.getMessage());
+    }
+
+    @Und("^ich stelle einen Kaffeebecher in die Maschine$")
+    public void ichStelleEinenKaffeebecherInDieMaschine() throws Throwable {
+        page.insertPot();
+    }
+
+    @Und("^es ist Kaffee im Becher$")
+    public void esIstKaffeeImBecher() throws Throwable {
+        page.hasCoffee();
+    }
+
+    @Dann("^wird kein weiterer Kaffee ausgegeben$")
+    public void wirdKeinWeitererKaffeeAusgegeben() throws Throwable {
+        assertEquals("Please take your coffee!", page.getMessage());
+    }
+
+    @Und("^es wird die Nachricht ausgegeben, dass der Kaffee zuerst entnommen werden muss$")
+    public void esWirdDieNachrichtAusgegebenDassDerKaffeZuerstEntnommenWerdenMuss() throws Throwable {
+        assertEquals("Please take your coffee!", page.getMessage());
+    }
+
+    @Und("^ich nehme den Becher aus der Maschine$")
+    public void ichNehmeDenBecherAusDerMaschine() throws Throwable {
+        page.takeCoffee();
+    }
+
+    @Dann("^wird ein Kaffee ausgegeben$")
+    public void wirdEinKaffeeAusgegeben() throws Throwable {
+        assertTrue(page.hasCoffee());
+    }
+
+    @Dann("^wird nach (\\d+) Sekunden die Nachricht ausgeblendet$")
+    public void wirdNachSekundenDieNachrichtAusgeblendet(int arg0) throws Throwable {
         $(".message").waitUntil(Condition.exactText("Welcome!"), arg0 * 1000);
     }
 
+    @Und("^ich drücke den Knopf für die automatische Reinigung$")
+    public void ichDrückeDenKnopfFürDieAutomatischeReinigung() throws Throwable {
+        page.clean();
+    }
 }

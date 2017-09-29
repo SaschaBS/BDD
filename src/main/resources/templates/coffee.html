@@ -3,7 +3,8 @@
 <head>
     <title>Tasty coffee!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <script src="/webjars/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/functions.js"></script>
     <link th:href="@{/css/coffee.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -28,89 +29,6 @@
     <label for="serviceInterval">Service Interval:</label>
     <input id="serviceInterval" value="50"/>
 </div>
-
-<script>
-
-    var coffees = 0;
-    var serviceInterval = 50;
-    var lang = 'en';
-
-    $(".power").click(function () {
-        $(this).toggleClass("on");
-        var isOn = $(".power").hasClass("on");
-        setMessage(isOn ? 'Welcome' : 'Standby');
-    });
-
-    $(".brew").click(function () {
-        $(this).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
-        $(".potFilled").show();
-        coffees++;
-        if (coffees == serviceInterval) {
-            requireCleaning();
-        }
-    });
-
-    $(".clean").click(function () {
-        $(this).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
-    });
-
-    $(".tray").click(function () {
-        var filledCoffee = $(".potFilled");
-        if (filledCoffee.is(':visible')) {
-            filledCoffee.hide();
-            $(".pot").hide();
-        } else {
-            $(".pot").toggle();
-        }
-    });
-
-    $("#languages").change(function (val) {
-        lang = val.target.value;
-        var isOn = $(".power").hasClass("on");
-        setMessage(isOn ? 'Welcome' : 'Standby');
-    });
-
-    $("#serviceInterval").change(function (val) {
-        serviceInterval = val.target.value;
-    });
-
-    var getLocalizedMessage = function (type, lang) {
-        if (lang === 'de') {
-            switch (type) {
-                case 'Welcome' :
-                    return 'Willkommen';
-                case 'Standby':
-                    return 'Bitte den Einschaltknopf drücken!';
-            }
-        }
-        if (lang === 'en') {
-            switch (type) {
-                case 'Welcome' :
-                    return 'Welcome!';
-                case 'Standby':
-                    return 'Push Power to start coffee machine!';
-                case 'Clean':
-                    return 'Please clean the machine';
-            }
-        }
-    };
-
-    var setMessage = function (type) {
-        $(".message").find("span").text(getLocalizedMessage(type, lang));
-    };
-
-    var requireCleaning = function () {
-        setMessage('Clean');
-        setTimeout(function () {
-            setMessage('Welcome');
-        }, 10000);
-    };
-
-    $(document).ready(function () {
-        setMessage('Standby');
-    });
-
-</script>
 
 </body>
 </html>

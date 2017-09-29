@@ -1,6 +1,6 @@
 # language: de
 # encoding: utf-8
-#noinspection NonAsciiCharacters
+# noinspection NonAsciiCharacters
 Funktionalität: Als Benutzer der Kaffeemaschine möchte ich die Maschine einschalten könnten, damit ich mir einen Kaffee zubereiten kann.
 
   Szenariogrundriss: : Wenn die Maschine noch nicht eingeschaltet wurde, leuchtet die Powertaste rot und ein Hinweistext, weist darauf hin,
@@ -28,3 +28,9 @@ Funktionalität: Als Benutzer der Kaffeemaschine möchte ich die Maschine einsch
       | sprache | nachricht  |
       | de      | Willkommen |
       | en      | Welcome!   |
+
+  Szenario: Wenn die Maschine nicht eingeschaltet ist, dann kann ich keinen Kaffee zubereiten
+    Angenommen Ich betrachte die Kaffeemaschine
+    Und ich stelle einen Kaffeebecher in die Maschine
+    Und ich drücke den Knopf für Kaffee
+    Dann wird kein Kaffee ausgegeben
