@@ -31,8 +31,9 @@ dependencies {
 
     runtime("org.hsqldb:hsqldb") // embedded database
 
+    testCompile('org.chiknrice:concordion-spring-runner:0.0.1') // Runner to integrate Spring with Concordion
     testCompile('org.springframework.boot:spring-boot-starter-test') // makes @SpringBootTest possible
-
+    testCompile ('org.concordion:concordion:2.1.1')
     testCompile('info.cukes:cucumber-java:1.2.4') // cucumber language for java
     testCompile('info.cukes:cucumber-junit:1.2.4') // RunWith(Cucumber.class) possible
     testCompile('info.cukes:cucumber-spring:1.2.4') // Spring automatically looks for features and StepDefs
@@ -41,4 +42,7 @@ dependencies {
 
 test {
     systemProperties['selenide.browser'] = 'chrome' // set chrome as the default browser in tests, because firefox refused to work. :-(
+    testLogging.showStandardStreams = true   // display test output on console
+    systemProperties['concordion.output.dir'] = "$reporting.baseDir/spec"  // write output to build/reports/spec
+    outputs.upToDateWhen { false }   // force tests to run even if code hasn't changed
 }

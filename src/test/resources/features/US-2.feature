@@ -1,9 +1,6 @@
 # language: de
 # encoding: utf-8
-
-#noinspection NonAsciiCharacters
-Funktionalität:
-  Die Kaffeemaschine muss verhindern, dass ein Kaffee zubereitet wird, wenn kein Becher untergestellt wurde, damit kein Kaffee auf den Boden läuft.
+Funktionalität: Die Kaffeemaschine muss verhindern, dass ein Kaffee zubereitet wird, wenn kein Becher untergestellt wurde, damit kein Kaffee auf den Boden läuft.
 
   Szenario: Es muss ein Becher untergestellt sein, damit ein Kaffe gebrüht werden kann
     Angenommen Die Kaffeemaschine ist eingeschaltet

@@ -1,7 +1,6 @@
 package integration.steps;
 
 import com.codeborne.selenide.Condition;
-import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.de.Angenommen;
 import cucumber.api.java.de.Dann;
@@ -89,9 +88,4 @@ public class CoffeeSteps {
         $(".message").waitUntil(Condition.exactText("Welcome!"), arg0 * 1000);
     }
 
-    @Und("^es ist kein Becher untergestellt$")
-    public void esIstKeinBecherUntergestellt() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
 }

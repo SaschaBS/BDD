@@ -1,9 +1,7 @@
 # language: de
 # encoding: utf-8
-
 #noinspection NonAsciiCharacters
-Funktionalität:
-  Als Benutzer der Kaffeemaschine möchte ich die Maschine einschalten könnten, damit ich mir einen Kaffee zubereiten kann.
+Funktionalität: Als Benutzer der Kaffeemaschine möchte ich die Maschine einschalten könnten, damit ich mir einen Kaffee zubereiten kann.
 
   Szenariogrundriss: : Wenn die Maschine noch nicht eingeschaltet wurde, leuchtet die Powertaste rot und ein Hinweistext, weist darauf hin,
   dass sie eingeschaltet werden muss.
@@ -18,7 +16,7 @@ Funktionalität:
       | en      | Push Power to start coffee machine! |
 
 
-  Szenariogrundriss: io: Wenn die Maschine eingeschaltet wurde, leuchtet die Powertaste grün und die Maschine begrüßt den Anwender
+  Szenariogrundriss: Wenn die Maschine eingeschaltet wurde, leuchtet die Powertaste grün und die Maschine begrüßt den Anwender
     Angenommen Ich betrachte die Kaffeemaschine
     Und die Kaffemaschine wurde noch nicht eingeschaltet
     Und ich schalte die Kaffemaschine ein

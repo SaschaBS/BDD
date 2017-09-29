@@ -1,6 +1,3 @@
 # language: de
 # encoding: utf-8
-
-#noinspection NonAsciiCharacters
-Funktionalität:
-  Es darf nicht möglich sein, einen weiteren Kaffee anzufordern, wenn noch ein gefüllter Becher in der Maschine steht, damit der Becher nicht überläuft.
+Funktionalität:  Es darf nicht möglich sein, einen weiteren Kaffee anzufordern, wenn noch ein gefüllter Becher in der Maschine steht, damit der Becher nicht überläuft.
