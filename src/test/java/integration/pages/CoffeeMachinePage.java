@@ -17,6 +17,12 @@ public class CoffeeMachinePage {
 
     private final SelenideElement language = $(By.name("language"));
 
+    private final SelenideElement serviceInterval = $("#serviceInterval");
+
+    private final SelenideElement tray = $(By.className("tray"));
+
+    private final SelenideElement brew = $(By.className("brew"));
+
     public String getMessage() {
         return display.getText();
     }
@@ -40,4 +46,19 @@ public class CoffeeMachinePage {
     public void setLanguage(String language) {
         this.language.selectOptionByValue(language);
     }
+
+    public void setServiceInterval(String interval) {
+        serviceInterval.setValue(interval);
+    }
+
+    public void brew() {
+        brew.click();
+    }
+
+    public void insertPot() {
+        tray.click();
+    }
+
+
+
 }
