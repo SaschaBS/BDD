@@ -140,7 +140,7 @@ public class CoffeeSteps {
     }
 
     @Und("^ich drücke den Knopf für die automatische Reinigung$")
-    public void ichDrückeDenKnopfFürDieAutomatischeReinigung() throws Throwable {
+    public void ichDrueckeDenKnopfFuerDieAutomatischeReinigung() throws Throwable {
         page.clean();
     }
 }

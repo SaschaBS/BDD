@@ -58,25 +58,30 @@ $(document).ready(function () {
 
     $(".brew").click(function () {
         $(this).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
-        if (filledPot()) {
-            setMessage('Coffee');
-        } else if (noPot()) {
-            setMessage('Pot');
-            setTimeout(function () {
-                setMessage('Welcome');
-            }, 10000);
-        }
-        else {
-            $(".potFilled").show();
-            coffees++;
-            if (coffees == serviceInterval) {
-                requireCleaning();
+        var isOn = $(".power").hasClass("on");
+        if (isOn) {
+            if (filledPot()) {
+                setMessage('Coffee');
+            } else if (noPot()) {
+                setMessage('Pot');
+                setTimeout(function () {
+                    setMessage('Welcome');
+                }, 10000);
+            }
+            else {
+                if (coffees == serviceInterval) {
+                    requireCleaning();
+                } else {
+                    $(".potFilled").show();
+                    coffees++;
+                }
             }
         }
     });
 
     $(".clean").click(function () {
         $(this).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+        coffees = 0;
     });
 
     $(".tray").click(function () {
