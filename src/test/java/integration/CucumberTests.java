@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         strict = true,
 //        features = "src/test/resources/features",
-        features = {"build/resources/test/features", "build/generated-test-sources/cucumber"},
+        features = {"src/test/resources/test/features", "build/generated-test-sources/cucumber"},
         format = {
                 "json:target/cucumber/cucumber-report.json",
                 "html:target/cucumber/plain-html-reports"
