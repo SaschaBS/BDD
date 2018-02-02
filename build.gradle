@@ -57,8 +57,8 @@ dependencies {
 
 test {
     systemProperties['selenide.browser'] = 'chrome'
-    systemProperties['selenide.headless'] = true
-    systemProperties['selenide.start-maximized'] = false
+//    systemProperties['selenide.headless'] = true
+//    systemProperties['selenide.start-maximized'] = false
     // set chrome as the default browser in tests, because firefox refused to work. :-(
     testLogging.showStandardStreams = true   // display test output on console
     systemProperties['concordion.output.dir'] = "$reporting.baseDir/spec"  // write output to build/reports/spec
