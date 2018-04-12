@@ -52,13 +52,11 @@ dependencies {
     testCompile('info.cukes:cucumber-junit:1.2.4') // RunWith(Cucumber.class) possible
     testCompile('info.cukes:cucumber-spring:1.2.4') // Spring automatically looks for features and StepDefs
     testCompile 'com.codeborne:selenide:4.6' // test Framework for UA tests
+    testCompile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '2.2.1'
 
 }
 
 test {
-    systemProperties['selenide.browser'] = 'chrome'
-//    systemProperties['selenide.headless'] = true
-//    systemProperties['selenide.start-maximized'] = false
     // set chrome as the default browser in tests, because firefox refused to work. :-(
     testLogging.showStandardStreams = true   // display test output on console
     systemProperties['concordion.output.dir'] = "$reporting.baseDir/spec"  // write output to build/reports/spec

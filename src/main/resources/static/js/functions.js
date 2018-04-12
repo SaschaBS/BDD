@@ -69,7 +69,7 @@ $(document).ready(function () {
                 }, 10000);
             }
             else {
-                if (coffees == serviceInterval) {
+                if (coffees >= serviceInterval) {
                     requireCleaning();
                 } else {
                     $(".potFilled").show();
