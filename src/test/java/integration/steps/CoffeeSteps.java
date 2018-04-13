@@ -1,11 +1,13 @@
 package integration.steps;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import cucumber.api.java.Before;
 import cucumber.api.java.de.Angenommen;
 import cucumber.api.java.de.Dann;
 import cucumber.api.java.de.Und;
 import integration.pages.CoffeeMachinePage;
+import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 
@@ -20,7 +22,8 @@ public class CoffeeSteps {
 
     @Before
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
+        ChromeDriverManager.getInstance().setup();
+        Configuration.browser = "chrome";
         page = new CoffeeMachinePage();
     }
 

@@ -1,9 +1,15 @@
+import com.hindsighttesting.behave.gradle.FeaturesTask
+
 buildscript {
     ext.spring_boot_version = '1.5.7.RELEASE'
     ext.gebVersion = '1.1.1'
     ext.seleniumVersion = '3.0.0'
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_version"
+        classpath "com.hindsighttesting.behave:behave-gradle-task:1.0.0-1"
+    }
+    repositories {
+        maven { url 'http://repo.hindsightsoftware.com/public-maven' }
     }
 }
 
@@ -12,10 +18,18 @@ plugins {
     id "org.springframework.boot" version "1.5.7.RELEASE"
 }
 
-sourceCompatibility = 1.8
-
 repositories {
     mavenCentral()
+}
+
+sourceCompatibility = 1.8
+
+task behavefeatures(type: com.hindsighttesting.behave.gradle.FeaturesTask) {
+    projectKey = '10200'
+    server = 'http://s-v1-260:8080'
+    username = 'Sascha.Hoppe'
+    password = 'Sivert00'
+    destinationDir = 'build/generated-test-sources/cucumber'
 }
 
 springBoot {
@@ -33,15 +47,17 @@ dependencies {
 
     testCompile('org.chiknrice:concordion-spring-runner:0.0.1') // Runner to integrate Spring with Concordion
     testCompile('org.springframework.boot:spring-boot-starter-test') // makes @SpringBootTest possible
-    testCompile ('org.concordion:concordion:2.1.1')
+    testCompile('org.concordion:concordion:2.1.1')
     testCompile('info.cukes:cucumber-java:1.2.4') // cucumber language for java
     testCompile('info.cukes:cucumber-junit:1.2.4') // RunWith(Cucumber.class) possible
     testCompile('info.cukes:cucumber-spring:1.2.4') // Spring automatically looks for features and StepDefs
     testCompile 'com.codeborne:selenide:4.6' // test Framework for UA tests
+    testCompile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '2.2.1'
+
 }
 
 test {
-    systemProperties['selenide.browser'] = 'chrome' // set chrome as the default browser in tests, because firefox refused to work. :-(
+    // set chrome as the default browser in tests, because firefox refused to work. :-(
     testLogging.showStandardStreams = true   // display test output on console
     systemProperties['concordion.output.dir'] = "$reporting.baseDir/spec"  // write output to build/reports/spec
     outputs.upToDateWhen { false }   // force tests to run even if code hasn't changed

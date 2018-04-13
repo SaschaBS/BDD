@@ -1,14 +1,25 @@
 # language: de
 # encoding: utf-8
-Funktionalität: Die Kaffeemaschine muss verhindern, dass ein Kaffee zubereitet wird, wenn kein Becher untergestellt wurde, damit kein Kaffee auf den Boden läuft.
+Funktionalität: Als Benutzer der Kaffeemaschine möchte ich, dass kein Kaffee aus der Maschine kommt, wenn kein Becher untergestellt ist, damit ich die Schweinerei hinterher nicht aufwischen muss.
 
-  Szenario: Es muss ein Becher untergestellt sein, damit ein Kaffe gebrüht werden kann
-    Angenommen Die Kaffeemaschine ist eingeschaltet
-    Und es ist kein Becher untergestellt
+
+  @SKIL-1 @OPEN
+  Szenario: Wenn kein Becher untergestellt ist, darf kein Kaffee aus der Maschine kommen
+    Angenommen ich betrachte die Kaffeemaschine
+    Und die Kaffeemaschine ist eingeschaltet
     Und ich drücke den Knopf für Kaffee
     Dann wird kein Kaffee ausgegeben
     Und im Display wird angezeigt, dass der Benutzer eine Tasse unterstellen muss
 
+
+  @SKIL-1 @OPEN
+  Szenario: Wenn die Maschine nicht eingeschaltet ist, kommt auch kein Kaffee raus
+    Angenommen ich betrachte die Kaffeemaschine
+    Und die Kaffemaschine ist ausgeschaltet
+    Und ich drücke den Knopf für Kaffee
+    Dann wird kein Kaffee ausgegeben
+
+  @SKIL-1 @OPEN
   Szenario: Die Nachricht, dass eine Tasse untergestellt werden soll, muss verschwinden, wenn 10 sek. nichts betätigt wird
     Angenommen Die Kaffeemaschine ist eingeschaltet
     Und das Serviceintervall wurde erreicht

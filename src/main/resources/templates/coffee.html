@@ -20,7 +20,7 @@
 
 </div>
 <div class="admin">
-    <label for="languages">Sprach:</label>
+    <label for="languages">Sprache:</label>
     <select id="languages" name="language">
         <option value="de">Deutsch</option>
         <option value="en" selected="selected">English</option>
@@ -34,10 +34,11 @@
     var coffees = 0;
     var serviceInterval = 50;
     var lang = 'en';
+    var isOn = false;
 
     $(".power").click(function () {
         $(this).toggleClass("on");
-        var isOn = $(".power").hasClass("on");
+        isOn = $(".power").hasClass("on");
         setMessage(isOn ? 'Welcome' : 'Standby');
     });
 
@@ -45,7 +46,7 @@
         $(this).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
         $(".potFilled").show();
         coffees++;
-        if (coffees == serviceInterval) {
+        if (coffees >= serviceInterval) {
             requireCleaning();
         }
     });
