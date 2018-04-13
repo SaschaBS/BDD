@@ -3,6 +3,7 @@ package integration.steps;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
+import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.de.Angenommen;
 import cucumber.api.java.de.Dann;
@@ -147,4 +148,5 @@ public class CoffeeSteps {
     public void ichDrueckeDenKnopfFuerDieAutomatischeReinigung() throws Throwable {
         page.clean();
     }
+
 }

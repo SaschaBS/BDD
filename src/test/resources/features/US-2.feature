@@ -5,17 +5,16 @@ Funktionalität: Als Benutzer der Kaffeemaschine möchte ich, dass kein Kaffee a
 
   @SKIL-1 @OPEN
   Szenario: Wenn kein Becher untergestellt ist, darf kein Kaffee aus der Maschine kommen
-    Angenommen ich betrachte die Kaffeemaschine
-    Und die Kaffeemaschine ist eingeschaltet
+    Angenommen Ich betrachte die Kaffeemaschine
+    Und Die Kaffeemaschine ist eingeschaltet
     Und ich drücke den Knopf für Kaffee
     Dann wird kein Kaffee ausgegeben
     Und im Display wird angezeigt, dass der Benutzer eine Tasse unterstellen muss
 
-
   @SKIL-1 @OPEN
   Szenario: Wenn die Maschine nicht eingeschaltet ist, kommt auch kein Kaffee raus
-    Angenommen ich betrachte die Kaffeemaschine
-    Und die Kaffemaschine ist ausgeschaltet
+    Angenommen Ich betrachte die Kaffeemaschine
+    Und die Kaffemaschine wurde noch nicht eingeschaltet
     Und ich drücke den Knopf für Kaffee
     Dann wird kein Kaffee ausgegeben
 
