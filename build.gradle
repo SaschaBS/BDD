@@ -18,6 +18,8 @@ plugins {
     id "org.springframework.boot" version "1.5.7.RELEASE"
 }
 
+sourceCompatibility = 1.8
+
 repositories {
     mavenCentral()
 }
@@ -25,7 +27,7 @@ repositories {
 sourceCompatibility = 1.8
 
 task behavefeatures(type: com.hindsighttesting.behave.gradle.FeaturesTask) {
-    projectKey = '10100'
+    projectKey = '10200'
     server = 'http://s-v1-260:8080'
     username = 'Sascha.Hoppe'
     password = 'Sivert00'
@@ -57,7 +59,6 @@ dependencies {
 }
 
 test {
-    // set chrome as the default browser in tests, because firefox refused to work. :-(
     testLogging.showStandardStreams = true   // display test output on console
     systemProperties['concordion.output.dir'] = "$reporting.baseDir/spec"  // write output to build/reports/spec
     outputs.upToDateWhen { false }   // force tests to run even if code hasn't changed
