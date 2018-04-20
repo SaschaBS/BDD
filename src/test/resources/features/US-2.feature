@@ -1,6 +1,6 @@
 # language: de
 # encoding: utf-8
-Funktionalität: Als Benutzer der Kaffeemaschine möchte ich, dass kein Kaffee aus der Maschine kommt, wenn kein Becher untergestellt ist, damit ich die Schweinerei hinterher nicht aufwischen muss.
+Funktionalität: Sicherheitsfunktion
 
   @SKIL-1 @OPEN
   Szenario: Die Nachricht, dass eine Tasse untergestellt werden soll, muss verschwinden, wenn 10 sek. nichts betätigt wird
