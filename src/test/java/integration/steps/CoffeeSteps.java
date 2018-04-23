@@ -9,6 +9,8 @@ import cucumber.api.java.de.Und;
 import integration.pages.CoffeeMachinePage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.junit.BeforeClass;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 
@@ -20,6 +22,7 @@ import static org.junit.Assert.*;
 public class CoffeeSteps {
 
     private CoffeeMachinePage page;
+    private ChromeDriver driver;
 
     @Before
     public void instantiate() {
