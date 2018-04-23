@@ -14,7 +14,7 @@ import org.springframework.test.context.ContextConfiguration;
 import static com.codeborne.selenide.Selenide.$;
 import static org.junit.Assert.*;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @ContextConfiguration(classes = {de.lineas.bddemo.Application.class})
 public class CoffeeSteps {
 
