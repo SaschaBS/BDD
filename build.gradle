@@ -29,8 +29,8 @@ sourceCompatibility = 1.8
 task behavefeatures(type: com.hindsighttesting.behave.gradle.FeaturesTask) {
     projectKey = '10200'
     server = 'http://s-v1-260:8080'
-    username = 'Sascha.Hoppe'
-    password = 'Sivert00'
+    username = 'Gradle2'
+    password = 'gradle'
     destinationDir = 'build/generated-test-sources/cucumber'
 }
 

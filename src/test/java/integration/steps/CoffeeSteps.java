@@ -26,6 +26,7 @@ public class CoffeeSteps {
     public void setup() {
         ChromeDriverManager.getInstance().setup();
         Configuration.browser = "chrome";
+        Configuration.baseUrl = "http://localhost:8082";
         page = new CoffeeMachinePage();
     }
 
@@ -141,7 +142,7 @@ public class CoffeeSteps {
 
     @Dann("^wird nach (\\d+) Sekunden die Nachricht ausgeblendet$")
     public void wirdNachSekundenDieNachrichtAusgeblendet(int arg0) throws Throwable {
-        $(".message").waitUntil(Condition.exactText("Welcome!"), arg0 * 1000);
+        $(".message").waitUntil(Condition.exactText("Welcome!"), arg0 * 800); // will fail
     }
 
     @Und("^ich drücke den Knopf für die automatische Reinigung$")

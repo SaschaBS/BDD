@@ -1,7 +1,10 @@
 package integration;
 
+import com.codeborne.selenide.Configuration;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
+import io.github.bonigarcia.wdm.ChromeDriverManager;
+import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
