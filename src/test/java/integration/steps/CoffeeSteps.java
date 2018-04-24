@@ -94,7 +94,7 @@ public class CoffeeSteps {
 
     @Dann("^wird nach (\\d+) Sekunden die Servicenachricht ausgeblendet$")
     public void wirdNachSekundenDieServicenachrichtAusgeblendet(int arg0) throws Throwable {
-        $(".message").waitUntil(Condition.exactText("Welcome!"), arg0 * 1000);
+        $(".message").waitUntil(Condition.exactText("Welcome!"), arg0 * 800); // will fail
     }
 
 }
