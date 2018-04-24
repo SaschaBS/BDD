@@ -1,7 +1,7 @@
 # language: de
 # encoding: utf-8
 # noinspection NonAsciiCharacters
-Funktionalität: Als Benutzer der Kaffeemaschine möchte ich die Maschine einschalten könnten, damit ich mir einen Kaffee zubereiten kann.
+Funktionalität: Als Benutzer der Kaffeemaschine möchte ich die Maschine einschalten können.
 
 
   @SKIL-2 @OPEN

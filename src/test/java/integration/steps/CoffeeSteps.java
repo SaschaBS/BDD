@@ -2,8 +2,6 @@ package integration.steps;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.WebDriverRunner;
-import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.de.Angenommen;
 import cucumber.api.java.de.Dann;
@@ -142,7 +140,7 @@ public class CoffeeSteps {
 
     @Dann("^wird nach (\\d+) Sekunden die Nachricht ausgeblendet$")
     public void wirdNachSekundenDieNachrichtAusgeblendet(int arg0) throws Throwable {
-        $(".message").waitUntil(Condition.exactText("Welcome!"), arg0 * 800); // will fail
+        $(".message").waitUntil(Condition.exactText("Welcome!"), arg0 * 1000);
     }
 
     @Und("^ich drücke den Knopf für die automatische Reinigung$")

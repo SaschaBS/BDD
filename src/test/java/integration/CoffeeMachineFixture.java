@@ -21,8 +21,10 @@ public class CoffeeMachineFixture {
 
     @Before
     public void setup() {
+
         ChromeDriverManager.getInstance().setup();
         Configuration.browser = "chrome";
+        Configuration.baseUrl = "http://localhost:8082";
         page = new CoffeeMachinePage();
         page.open();
         page.setLanguage("de");
