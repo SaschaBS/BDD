@@ -1,7 +1,6 @@
 # language: de
-Funktionalität: Einschaltfunktion
+Funktionalität: Einschalten der Kaffeemaschine
 
-  @SKIL-2 @OPEN
   Szenariogrundriss: Wenn die Maschine noch nicht eingeschaltet wurde, leuchtet die Powertaste rot und ein Hinweistext, weist darauf hin,   dass sie eingeschaltet werden muss.
     Angenommen Ich betrachte die Kaffeemaschine
     Und die Kaffemaschine wurde noch nicht eingeschaltet
@@ -13,8 +12,6 @@ Funktionalität: Einschaltfunktion
       | de      | Bitte den Einschaltknopf drücken!   |
       | en      | Push Power to start coffee machine! |
 
-
-  @SKIL-2 @OPEN
   Szenariogrundriss: Wenn die Maschine eingeschaltet wurde, leuchtet die Powertaste grün und die Maschine begrüßt den Anwender
     Angenommen Ich betrachte die Kaffeemaschine
     Und die Kaffemaschine wurde noch nicht eingeschaltet

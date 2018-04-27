@@ -24,13 +24,13 @@ repositories {
 
 sourceCompatibility = 1.8
 
-task behavefeatures(type: com.hindsighttesting.behave.gradle.FeaturesTask) {
-    projectKey = '10200'
-    server = 'http://s-v1-260:8080'
-    username = 'Gradle2'
-    password = 'gradle'
-    destinationDir = 'build/generated-test-sources/cucumber'
-}
+//task behavefeatures(type: com.hindsighttesting.behave.gradle.FeaturesTask) {
+//    projectKey = '10200'
+//    server = 'http://s-v1-260:8080'
+//    username = 'Gradle2'
+//    password = 'gradle'
+//    destinationDir = 'src/test/resources/features'
+//}
 
 springBoot {
     mainClass = 'de.lineas.bddemo.Application' // tell Spring Boot where the main class is. Otherwise not booting.
