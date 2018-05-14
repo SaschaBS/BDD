@@ -3,7 +3,6 @@ package integration.pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.impl.SelenideFieldDecorator;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -21,7 +20,5 @@ public class CoffeeMachinePage {
     public void open() {
         Selenide.open(URL);
     }
-
-
 
 }
