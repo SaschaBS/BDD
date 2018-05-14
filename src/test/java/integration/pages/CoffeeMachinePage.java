@@ -84,4 +84,8 @@ public class CoffeeMachinePage {
     public void clean() {
         clean.click();
     }
+
+    public String getPowerButtonColor() {
+        return power.getCssValue("background-color");
+    }
 }

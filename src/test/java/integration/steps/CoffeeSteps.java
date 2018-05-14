@@ -51,6 +51,7 @@ public class CoffeeSteps {
     @Dann("^leuchtet der Einschaltknopf grün$")
     public void leuchtetDerEinschaltknopfGruen() throws Throwable {
         assertTrue(page.isOn());
+        assertEquals("rgba(0, 128, 0, 1)", page.getPowerButtonColor());
     }
 
     @Und("^das Display zeigt die Nachricht \"([^\"]*)\" an$")
