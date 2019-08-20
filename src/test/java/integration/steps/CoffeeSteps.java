@@ -8,6 +8,8 @@ import cucumber.api.java.de.Dann;
 import cucumber.api.java.de.Und;
 import integration.pages.CoffeeMachinePage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.FirefoxDriverManager;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 
@@ -22,8 +24,10 @@ public class CoffeeSteps {
 
     @Before
     public void setup() {
-        ChromeDriverManager.getInstance().setup();
+        ChromeDriverManager
+                .getInstance().version("76").setup();
         Configuration.browser = "chrome";
+        Configuration.browserVersion = "76";
         Configuration.baseUrl = "http://localhost:8082";
         page = new CoffeeMachinePage();
     }

@@ -4,6 +4,12 @@
     <facet type="Spring" name="Spring">
       <configuration />
     </facet>
+    <facet type="web" name="Web">
+      <configuration>
+        <webroots />
+        <sourceRoots />
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output-test url="file://$MODULE_DIR$/../../out/test/classes" />
@@ -21,8 +27,8 @@
     <orderEntry type="library" name="Gradle: org.webjars:jquery:2.0.3-1" level="project" />
     <orderEntry type="library" name="Gradle: org.chiknrice:concordion-spring-runner:0.0.1" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-test:1.5.7.RELEASE" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.hsqldb:hsqldb:2.3.5" level="project" />
     <orderEntry type="library" name="Gradle: org.concordion:concordion:2.1.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.hsqldb:hsqldb:2.3.5" level="project" />
     <orderEntry type="library" name="Gradle: info.cukes:cucumber-java:1.2.4" level="project" />
     <orderEntry type="library" name="Gradle: info.cukes:cucumber-junit:1.2.4" level="project" />
     <orderEntry type="library" name="Gradle: info.cukes:cucumber-spring:1.2.4" level="project" />

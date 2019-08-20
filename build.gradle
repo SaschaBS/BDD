@@ -1,7 +1,7 @@
 buildscript {
     ext.spring_boot_version = '1.5.7.RELEASE'
     ext.gebVersion = '1.1.1'
-    ext.seleniumVersion = '3.0.0'
+    ext.seleniumVersion = '3.141.0'
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_version"
         classpath "com.hindsighttesting.behave:behave-gradle-task:1.0.0-1"
@@ -32,12 +32,12 @@ task behavefeatures(type: com.hindsighttesting.behave.gradle.FeaturesTask) {
     destinationDir = 'src/test/resources/features'
 }
 
-task deleteOldFeatures(type: Delete) {
-    delete fileTree(dir: "src/test/resources/features")
-}
+//task deleteOldFeatures(type: Delete) {
+//    delete fileTree(dir: "src/test/resources/features")
+//}
 
-test.dependsOn(behavefeatures)
-behavefeatures.dependsOn(deleteOldFeatures)
+//test.dependsOn(behavefeatures)
+//behavefeatures.dependsOn(deleteOldFeatures)
 
 springBoot {
     mainClass = 'de.lineas.bddemo.Application' // tell Spring Boot where the main class is. Otherwise not booting.

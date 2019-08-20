@@ -22,7 +22,7 @@ public class CoffeeMachineFixture {
     @Before
     public void setup() {
 
-        ChromeDriverManager.getInstance().setup();
+        ChromeDriverManager.getInstance().version("76").setup();
         Configuration.browser = "chrome";
         Configuration.baseUrl = "http://localhost:8082";
         page = new CoffeeMachinePage();
